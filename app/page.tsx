@@ -69,7 +69,10 @@ export default function Portfolio() {
       'Java',
       'TypeScript',
       'Python',
-      'Express'
+      'Express',
+      'TypeORM',
+      'Prisma',
+      'NestJS'
     ],
     database: ['PostgreSQL', 'MySQL', 'MongoDB'],
     tools: ['Git', 'Docker', 'DBeaver', 'VS Code']
