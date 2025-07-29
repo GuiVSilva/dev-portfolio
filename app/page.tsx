@@ -17,17 +17,14 @@ import {
   Globe,
   Mail,
   MapPin,
-  Phone,
   Github,
   Linkedin,
   ExternalLink,
   Calendar,
   Briefcase,
   GraduationCap,
-  Star,
   Download,
-  ArrowRight,
-  Sparkles
+  ArrowRight
 } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -57,69 +54,82 @@ export default function Portfolio() {
 
   const skills = {
     frontend: [
+      'HTML',
+      'CSS',
       'React',
       'Next.js',
-      'TypeScript',
+      'JavaScript',
       'Tailwind CSS',
-      'Vue.js',
-      'Angular'
+      'Material UI',
+      'Shadcn UI'
     ],
-    backend: ['Node.js', 'Python', 'Java', 'Express', 'FastAPI', 'Spring Boot'],
-    database: ['PostgreSQL', 'MongoDB', 'MySQL', 'Redis', 'Supabase'],
-    tools: ['Git', 'Docker', 'AWS', 'Vercel', 'Figma', 'VS Code']
+    backend: [
+      'Node.js',
+      'Spring Boot',
+      'Java',
+      'TypeScript',
+      'Python',
+      'Express'
+    ],
+    database: ['PostgreSQL', 'MySQL', 'MongoDB'],
+    tools: ['Git', 'Docker', 'DBeaver', 'VS Code']
   }
 
   const projects = [
     {
-      title: 'E-commerce Platform',
+      title: 'StackFlow',
       description:
-        'Plataforma completa de e-commerce com painel administrativo, sistema de pagamentos e gestão de estoque.',
-      tech: ['Next.js', 'TypeScript', 'PostgreSQL', 'Stripe'],
-      image: '/placeholder.svg?height=200&width=300',
-      github: '#',
-      demo: '#'
+        'Gerencie sua empresa com eficiência, desenvolvida para otimizar seu fluxo de produção e organização (Em desenvolvimento)',
+      tech: [
+        'React',
+        'JavaScrpit',
+        'TypeScript',
+        'TailwindCSS',
+        'PostgreSQL',
+        'Docker'
+      ],
+      image: '/stackflow.png?height=200&width=300'
     },
     {
-      title: 'Task Management App',
+      title: 'Finance.ai',
       description:
-        'Aplicativo de gerenciamento de tarefas com colaboração em tempo real e notificações push.',
-      tech: ['React', 'Node.js', 'Socket.io', 'MongoDB'],
-      image: '/placeholder.svg?height=200&width=300',
-      github: '#',
-      demo: '#'
+        'Gerencie suas finanças com eficiência e inteligência, desenvolvida para simplificar e otimizar o controle financeiro pessoal',
+      tech: [
+        ' Next.js',
+        'TypeScript',
+        'TailwindCSS',
+        'Shadcn/ui',
+        'Prisma',
+        'Neon',
+        'PostgreSQL',
+        'Clerk',
+        'Stripe'
+      ],
+      image: '/finance.png?height=500&width=300'
     },
     {
-      title: 'Analytics Dashboard',
+      title: 'Dieta.AI',
       description:
-        'Dashboard de analytics com visualizações interativas e relatórios em tempo real.',
-      tech: ['Vue.js', 'Python', 'FastAPI', 'Chart.js'],
-      image: '/placeholder.svg?height=200&width=300',
-      github: '#',
-      demo: '#'
+        'Aplicativo mobile desenvolvido para transformar a maneira como as pessoas planejam suas dietas.',
+      tech: ['React Native', 'TypeScript', 'Node.js', 'IA Gemini do Google'],
+      image: '/dietaAi.png?height=200&width=300'
     }
   ]
 
   const experience = [
     {
-      title: 'Senior Full Stack Developer',
-      company: 'Tech Solutions Inc.',
-      period: '2022 - Presente',
+      title: 'Desenvolvedor FullStack',
+      company: 'FLAI',
+      period: 'Abril/2024 - Atual',
       description:
-        'Desenvolvimento de aplicações web escaláveis usando React, Node.js e AWS. Liderança técnica de equipe de 5 desenvolvedores.'
+        'Desenvolvimento de sistemas com React, Typescript, Node.js e PostgreSQL. Migração de sistemas legados (PHP/Delphi) para tecnologias modernas. Criação de APIs RESTful e interfaces responsivas.'
     },
     {
-      title: 'Full Stack Developer',
-      company: 'Digital Agency',
-      period: '2020 - 2022',
+      title: 'Suporte Técnico',
+      company: 'Wvetro',
+      period: 'Outubro/2023 - Abril/2024',
       description:
-        'Criação de sites e aplicações web para clientes diversos. Especialização em e-commerce e sistemas de gestão.'
-    },
-    {
-      title: 'Frontend Developer',
-      company: 'StartupXYZ',
-      period: '2019 - 2020',
-      description:
-        'Desenvolvimento de interfaces responsivas e experiências de usuário otimizadas. Trabalho com React e Vue.js.'
+        'Suporte a clientes, implantação de sistemas, treinamentos e gerenciamento de processos ágeis. Análise e classificação de erros no Jira, testes de funcionalidades e validação de correções.'
     }
   ]
 
@@ -195,15 +205,19 @@ export default function Portfolio() {
                 </p>
               </div>
 
-              <div className="flex flex-wrap gap-4">
+              {/* <div className="flex flex-wrap gap-4">
                 <Button
                   size="lg"
                   className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-purple-500/25 group"
+                  asChild
                 >
-                  <Mail className="w-4 h-4 mr-2 group-hover:animate-bounce" />
-                  Entre em Contato
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  <Link href="#contato">
+                    <Mail className="w-4 h-4 mr-2 group-hover:animate-bounce" />
+                    Entre em Contato
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Link>
                 </Button>
+
                 <Button
                   variant="outline"
                   size="lg"
@@ -212,7 +226,7 @@ export default function Portfolio() {
                   <Download className="w-4 h-4 mr-2" />
                   Download CV
                 </Button>
-              </div>
+              </div> */}
 
               <div className="flex space-x-6">
                 {[
@@ -280,66 +294,46 @@ export default function Portfolio() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <p className="text-lg text-gray-300 leading-relaxed">
-                Sou um desenvolvedor full-stack com paixão por criar aplicações
-                web modernas e eficientes. Tenho experiência sólida tanto no
-                frontend quanto no backend, sempre buscando as melhores práticas
-                e tecnologias mais recentes.
-              </p>
-              <p className="text-lg text-gray-300 leading-relaxed">
-                Minha jornada começou com curiosidade sobre como os sites
-                funcionam, e hoje trabalho com empresas de diversos tamanhos,
-                desde startups até grandes corporações, entregando soluções que
-                fazem a diferença no negócio.
-              </p>
+          <div className="flex justify-center">
+            <div className="max-w-2xl text-center">
+              <div className="space-y-6">
+                <p className="text-lg text-gray-300 leading-relaxed">
+                  Sou um desenvolvedor full-stack com paixão por criar
+                  aplicações web modernas e eficientes. Tenho experiência sólida
+                  tanto no frontend quanto no backend, sempre buscando as
+                  melhores práticas e tecnologias mais recentes.
+                </p>
+                <p className="text-lg text-gray-300 leading-relaxed">
+                  Minha jornada começou com curiosidade sobre como os sites
+                  funcionam, e hoje trabalho com empresas de diversos tamanhos,
+                  entregando soluções que fazem a diferença no negócio.
+                </p>
 
-              <div className="grid grid-cols-2 gap-6 pt-6">
-                {[
-                  {
-                    icon: MapPin,
-                    text: 'São Paulo, Brasil',
-                    color: 'text-purple-400'
-                  },
-                  {
-                    icon: Calendar,
-                    text: '1 ano e 5 meses experiência',
-                    color: 'text-green-400'
-                  },
-                  {
-                    icon: GraduationCap,
-                    text: 'Ciência da Computação',
-                    color: 'text-purple-400'
-                  },
-                  {
-                    icon: Star,
-                    text: '50+ projetos entregues',
-                    color: 'text-green-400'
-                  }
-                ].map((item, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center space-x-3 group hover:scale-105 transition-transform duration-300"
-                  >
-                    <item.icon
-                      className={`w-5 h-5 ${item.color} group-hover:animate-pulse`}
-                    />
-                    <span className="text-gray-300">{item.text}</span>
-                  </div>
-                ))}
+                <div className="grid grid-cols-2 gap-6 pt-6 justify-items-center">
+                  {[
+                    {
+                      icon: GraduationCap,
+                      text: 'Formado em Análise e Desenvolvimento de Sistemas',
+                      color: 'text-purple-400'
+                    },
+                    {
+                      icon: Calendar,
+                      text: '1 ano e 5 meses de experiência',
+                      color: 'text-green-400'
+                    }
+                  ].map((item, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center space-x-3 group hover:scale-105 transition-transform duration-300"
+                    >
+                      <item.icon
+                        className={`w-10 h-5 ${item.color} group-hover:animate-pulse`}
+                      />
+                      <span className="text-gray-300">{item.text}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-
-            <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-green-500/20 rounded-lg blur-xl group-hover:blur-2xl transition-all duration-300"></div>
-              <Image
-                src="/placeholder.svg?height=400&width=500"
-                alt="Workspace"
-                width={500}
-                height={400}
-                className="relative z-10 rounded-lg shadow-2xl group-hover:scale-105 transition-transform duration-500"
-              />
             </div>
           </div>
         </div>
@@ -524,29 +518,6 @@ export default function Portfolio() {
                       </Badge>
                     ))}
                   </div>
-                  <div className="flex space-x-4">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      asChild
-                      className="border-gray-600 text-gray-300 hover:border-purple-400 hover:text-purple-400 hover:bg-purple-400/10 transition-all duration-300 bg-transparent"
-                    >
-                      <Link href={project.github}>
-                        <Github className="w-4 h-4 mr-2" />
-                        Código
-                      </Link>
-                    </Button>
-                    <Button
-                      size="sm"
-                      asChild
-                      className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 transition-all duration-300 hover:scale-105"
-                    >
-                      <Link href={project.demo}>
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        Demo
-                      </Link>
-                    </Button>
-                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -554,7 +525,6 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Contact Section */}
       <section
         id="contato"
         className="py-16 px-6 bg-gray-800/50 backdrop-blur-sm"
@@ -565,109 +535,30 @@ export default function Portfolio() {
               Vamos Trabalhar Juntos?
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Estou sempre aberto a novos desafios e oportunidades interessantes
+              Estou sempre aberto a novas oportunidades e projetos desafiadores
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-2xl font-semibold mb-6 text-white">
-                  Entre em Contato
-                </h3>
-                <div className="space-y-4">
-                  {[
-                    {
-                      icon: Mail,
-                      title: 'Email',
-                      info: 'vieirasilvaguilherme70@gmail.com',
-                      color: 'text-purple-400',
-                      bgColor: 'bg-purple-500/10'
-                    },
-                    {
-                      icon: MapPin,
-                      title: 'Localização',
-                      info: 'Sorocaba - SP, Brasil',
-                      color: 'text-purple-400',
-                      bgColor: 'bg-purple-500/10'
-                    }
-                  ].map((contact, index) => (
-                    <div
-                      key={contact.title}
-                      className="flex items-center space-x-4 group hover:scale-105 transition-transform duration-300"
-                      style={{ animationDelay: `${index * 200}ms` }}
-                    >
-                      <div
-                        className={`w-12 h-12 ${contact.bgColor} rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}
-                      >
-                        <contact.icon className={`w-6 h-6 ${contact.color}`} />
-                      </div>
-                      <div>
-                        <p className="font-medium text-white">
-                          {contact.title}
-                        </p>
-                        <p className="text-gray-400">{contact.info}</p>
-                      </div>
-                    </div>
-                  ))}
+          <div className="flex flex-col items-center justify-center space-y-8">
+            <div className="text-center space-y-4">
+              <div className="flex items-center justify-center space-x-4 group">
+                <div className="p-2 bg-blue-500/10 rounded-full group-hover:bg-blue-500/20 transition">
+                  <Linkedin className="w-5 h-5 text-blue-400" />
                 </div>
+                <a
+                  href="https://linkedin.com/in/guivrs"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-blue-400 transition-colors"
+                >
+                  Linkedin
+                </a>
+              </div>
+              <div className="flex items-center justify-center space-x-4">
+                <MapPin className="w-6 h-6 text-purple-400" />
+                <span className="text-gray-300">Sorocaba - SP, Brasil</span>
               </div>
             </div>
-
-            <Card className="bg-gray-800/50 border-gray-700 backdrop-blur-sm hover:border-purple-500/50 transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="text-white">Envie uma Mensagem</CardTitle>
-                <CardDescription className="text-gray-400">
-                  Preencha o formulário e entrarei em contato em breve
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label className="text-sm font-medium mb-2 block text-gray-300">
-                      Nome
-                    </label>
-                    <Input
-                      placeholder="Seu nome"
-                      className="bg-gray-700 border-gray-600 text-white placeholder:text-gray-400 focus:border-purple-400 transition-colors duration-300"
-                    />
-                  </div>
-                  <div>
-                    <label className="text-sm font-medium mb-2 block text-gray-300">
-                      Email
-                    </label>
-                    <Input
-                      type="email"
-                      placeholder="seu@email.com"
-                      className="bg-gray-700 border-gray-600 text-white placeholder:text-gray-400 focus:border-purple-400 transition-colors duration-300"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label className="text-sm font-medium mb-2 block text-gray-300">
-                    Assunto
-                  </label>
-                  <Input
-                    placeholder="Assunto da mensagem"
-                    className="bg-gray-700 border-gray-600 text-white placeholder:text-gray-400 focus:border-purple-400 transition-colors duration-300"
-                  />
-                </div>
-                <div>
-                  <label className="text-sm font-medium mb-2 block text-gray-300">
-                    Mensagem
-                  </label>
-                  <Textarea
-                    placeholder="Sua mensagem..."
-                    rows={4}
-                    className="bg-gray-700 border-gray-600 text-white placeholder:text-gray-400 focus:border-purple-400 transition-colors duration-300"
-                  />
-                </div>
-                <Button className="w-full bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
-                  Enviar Mensagem
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>
